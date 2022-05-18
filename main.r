@@ -8,12 +8,12 @@
 
 # VAMOS A TRABAJAR CON UNA MUESTRA DE TAMAÑO N = 150
 
-### ???PARAMETROS??? ###
+### PARAMETROS ###
 sample_size <- 20000
 poisson_parameter <- 20 ## PROVISIONAL !!!!
 pois_values <- vector()
 
-## ????FUNCION PARA GENERAR NUESTROS VALORES DE POISSON???? ##
+## FUNCION PARA GENERAR NUESTROS VALORES DE POISSON ##
 gen_value_poisson <- function(pois_lambda) {
   sum <- 0
   count <- 0
