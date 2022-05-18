@@ -8,7 +8,7 @@
 
 # VAMOS A TRABAJAR CON UNA MUESTRA DE TAMAÑO N = 150
 
-### ??????PARAMETROS?????? ###
+### ???PARAMETROS??? ###
 sample_size <- 20000
 poisson_parameter <- 20 ## PROVISIONAL !!!!
 pois_values <- vector()
@@ -35,7 +35,7 @@ repeat{
   }
 }
 
-## ????GENERAMOS NUESTRO HISTOGRAMA PARA LA DISTRIBUCION DE FRECUENCIAS???? ##
+## GENERAMOS NUESTRO HISTOGRAMA PARA LA DISTRIBUCION DE FRECUENCIAS ##
 hist(pois_values,
      main=paste("Poisson Distribution Simulation with",sample_size, 
                 "values and Î»=", poisson_parameter),
