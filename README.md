@@ -1,4 +1,4 @@
-# trabajo-poisson
+# poisson-distribution-simulation
 ## Members
 - Francisco Javier Jiménez Montes <img src="https://cdn.frankerfacez.com/emoticon/303956/4" width="40"/>
 - Juan Marqués Garrido <img src="https://cdn.frankerfacez.com/emoticon/303956/4" width="40"/>
