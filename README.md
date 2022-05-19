@@ -1,8 +1,8 @@
 # trabajo-poisson
 ## Members
-- Francisco Javier Jiménez Montes <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
-- Juan Marqués Garrido <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
-- Pablo Jesús Moreno Polo <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
+- Francisco Javier Jiménez Montes <img src="https://cdn.frankerfacez.com/emoticon/303956/4" width="40"/>
+- Juan Marqués Garrido <img src="https://cdn.frankerfacez.com/emoticon/303956/4" width="40"/>
+- Pablo Jesús Moreno Polo <img src="https://cdn.frankerfacez.com/emoticon/303956/4" width="40">
 <p align = "center">
     <img src="https://c.tenor.com/iZ-UxW5tLMcAAAAC/spin-pepe.gif" width="100">
 </p>

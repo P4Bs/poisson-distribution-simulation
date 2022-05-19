@@ -2,7 +2,7 @@
 
 ### VARIABLES ###
 sample_size <- 100000
-lambda <- 109 ## PROVISIONAL !!!!
+lambda <- 109
 simulation_values <- integer()
 
 ## FUNCION PARA GENERAR NUESTROS VALORES DE LA DISTRIBUCION POISSON ##
@@ -30,7 +30,7 @@ hist(simulation_values,
       xlim = c(min_val, max_val),
       breaks = max_val - min_val,
       col = "#79cc5b"
-     )
+    )
 
 ## EJERCICIO 3 - ESTIMACION DE PROBABILIDADES DE INTERVALOS ##
 
@@ -40,7 +40,6 @@ sample_mean <- mean(simulation_values)
 sample_var <- var(simulation_values)
 
 ## EJERICICIO 5 - APLICACION DEL TEOREMA CENTRAL DEL LIMITE 
-
 clt_function <- function(x) {
   num_aux <- (x - sample_mean) / sqrt(sample_var)
   return(num_aux)
@@ -52,14 +51,16 @@ clt_var <- var(clt_values)
 
 
 hist(clt_values,
-     xlab = "Generated Values",
-     col = "#79cc5b"
-)
+      xlab = "PDV after Applying CLT Function",
+      xlab = "Generated Values",
+      col = "#79cc5b"
+    )
 
 sample_normal <- rnorm(100000)
 hist(sample_normal,
+      main = paste("Normal Distribution Values"),
       xlab = "Generated Values",
       col = "pink"
-)
+    )
 
 par(mfrow = c(1, 2)) #cambiar a (1,2) para sacar la superposicion de graficas
