@@ -6,6 +6,7 @@
 <p align = "center">
     <img src="https://c.tenor.com/iZ-UxW5tLMcAAAAC/spin-pepe.gif" width="200">
 </p>
+
 ---
 ## Proposito
 The purpose of this repository is to host the code of our Statistics Simulation written in the R language.
