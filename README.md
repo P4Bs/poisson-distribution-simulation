@@ -1,10 +1,10 @@
 # trabajo-poisson
 ## Integrantes
-- Juan Marqués Garrido <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
 - Francisco Javier Jiménez Montes <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
+- Juan Marqués Garrido <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
 - Pablo Jesús Moreno Polo <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
 <p align = "center">
-    <img src="https://c.tenor.com/iZ-UxW5tLMcAAAAC/spin-pepe.gif" width="200">
+    <img src="https://c.tenor.com/iZ-UxW5tLMcAAAAC/spin-pepe.gif" width="100">
 </p>
 
 ---
