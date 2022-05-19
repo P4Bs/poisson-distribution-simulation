@@ -1,6 +1,7 @@
 # trabajo-poisson
 ## Integrantes
 - Juan Marqués Garrido <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
+- Francisco Javier Jiménez Montes <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
 - Pablo Jesús Moreno Polo <img src="https://emoji.gg/assets/emoji/4610_Peepo_happy.png" width="30"/>
 ---
 ## Proposito
