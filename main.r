@@ -30,8 +30,7 @@ min_val <- min(pois_vals)
 max_val <- max(pois_vals)
 
 ## EJERCICIO 2 - HISTOGRAMA DE LA DISTRIBUCION DE FRECUENCIAS ##
-hist(
-      pois_vals,
+hist(pois_vals,
       main = paste("Poisson Distribution Simulation",
                     size, "values, lambda =", lambda
                   ),
