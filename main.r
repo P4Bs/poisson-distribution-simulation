@@ -1,8 +1,11 @@
+## Outputs and Strings ##
+interval_format <-
+          "Sample Probability: %f | Poisson Probability: %f | Error: %f"
+
 ## NUESTRA SEMILLA ##
 set.seed(42069) ## jaja numero gracioso
 
 ## EJERCICIO 1 - GENERACION DE UNA MUESTRA DE TAMANYO N
-
 ### VARIABLES ###
 size <- 100000
 lambda <- 32
@@ -20,14 +23,18 @@ gen_poisson_values <- function(lambda) {
 }
 
 ## GENERANDO NUESTOR VECTOR DE VALORES ##
-for (i in 1:size) pois_vals[i] <- gen_poisson_values(lambda)
+for (i in 1:size) {
+  pois_vals[i] <- gen_poisson_values(lambda)
+}
 min_val <- min(pois_vals)
 max_val <- max(pois_vals)
 
 ## EJERCICIO 2 - HISTOGRAMA DE LA DISTRIBUCION DE FRECUENCIAS ##
-hist(pois_vals,
-      main = paste("Poisson Distribution Simulation", size,
-                    "values, lambda =", lambda),
+hist(
+      pois_vals,
+      main = paste("Poisson Distribution Simulation",
+                    size, "values, lambda =", lambda
+                  ),
       xlab = "Generated Values",
       xlim = c(min_val, max_val),
       breaks = max_val - min_val,
@@ -42,8 +49,12 @@ for (i in min_val:max_val) {
 
   error <- abs(prob_dist - prob_sample) / prob_dist
   error_sum <- error_sum + error
-  print(sprintf("Sample Probability: %f | Poisson Probability: %f | Error: %f",
-          prob_sample, prob_dist, error))
+  print(sprintf(interval_format,
+                prob_sample,
+                prob_dist,
+                error
+                )
+        )
 }
 sprintf("Mean error : %f", error_sum / size)
 
@@ -61,9 +72,11 @@ clt_values <- sapply(pois_vals, clt_function)
 clt_mean <- mean(clt_values)
 clt_var <- var(clt_values)
 
+# MEDIA Y VARIANZA DE LA DISTRIBUCION TRAS APLICAR CLT FUNCTION #
+clt_mean
+clt_var
 
 ## OBTENEMOS LOS HISTOGRAMAS DE AMBAS DISTRIBUCIONES DE VALORES ##
-## par(mfrow = c(1, 2)) cambiar a (1,2) para sacar la superposicion de graficas
 clt_hist <- hist(clt_values,
                   main = "CLT Function applied to values",
                   xlab = "Generated Values"
@@ -71,7 +84,7 @@ clt_hist <- hist(clt_values,
 
 sample_normal <- rnorm(100000)
 norm <- hist(sample_normal,
-              main = paste("Normal Distribution Values"),
+              main = "Normal Distribution Values",
               xlab = "Generated Values",
             )
 
@@ -79,5 +92,9 @@ norm <- hist(sample_normal,
 plot(clt_hist,
       main = "Comparison Normal Distribution and CLT Func applied values",
       xlab = "Generated Values",
-      col = rgb(64 / 255, 224 / 255, 208 / 255, 0.25))
-plot(norm, col = rgb(255 / 255, 192 / 255, 203 / 255, 0.45), add = T)
+      col = rgb(64 / 255, 224 / 255, 208 / 255, 0.25)
+    )
+plot(norm,
+      col = rgb(255 / 255, 192 / 255, 203 / 255, 0.45),
+      add = T
+    )
