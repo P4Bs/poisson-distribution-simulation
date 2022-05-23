@@ -24,7 +24,7 @@ gen_poisson_values <- function(lambda) {
 
 ## GENERANDO NUESTOR VECTOR DE VALORES ##
 for (i in 1:size) {
-  pois_vals[i] <- gen_poisson_values(lambda)
+  pois_vals <- append(pois_vals, gen_poisson_values(lambda))
 }
 min_val <- min(pois_vals)
 max_val <- max(pois_vals)
@@ -69,7 +69,7 @@ clt_function <- function(x) {
 
 clt_values <- sapply(pois_vals, clt_function)
 clt_mean <- mean(clt_values)
-clt_var <- var(clt_values)
+clt_sd <- sd(clt_values)
 
 # MEDIA Y VARIANZA DE LA DISTRIBUCION TRAS APLICAR CLT FUNCTION #
 clt_mean
@@ -89,9 +89,9 @@ norm <- hist(sample_normal,
 
 ## PONEMOS LAS GRAFICAS SOLAPADAS PARA OBSERVAR LAS DIFERENCIAS :> #
 plot(clt_hist,
-      main = "Comparison Normal Distribution and CLT Func applied values",
+      main = "Histogram Comparison",
       xlab = "Generated Values",
-      col = rgb(64 / 255, 224 / 255, 208 / 255, 0.25)
+      col = rgb(0, 0, 1, 0.45)
     )
 plot(norm,
       col = rgb(255 / 255, 192 / 255, 203 / 255, 0.45),
