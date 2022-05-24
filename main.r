@@ -1,7 +1,3 @@
-## Outputs and Strings ##
-interval_format <-
-          "Sample Probability: %f | Poisson Probability: %f | Error: %f"
-
 ## NUESTRA SEMILLA ##
 set.seed(42069) ## jaja numero gracioso
 
@@ -19,7 +15,7 @@ gen_poisson_values <- function(lambda) {
     sum <- sum - log(runif(1))
     count <- count + 1
   }
-  return(count)
+  return(count - 1)
 }
 
 ## GENERANDO NUESTOR VECTOR DE VALORES ##
@@ -28,6 +24,8 @@ for (i in 1:size) {
 }
 min_val <- min(pois_vals)
 max_val <- max(pois_vals)
+min_val
+max_val
 
 ## EJERCICIO 2 - HISTOGRAMA DE LA DISTRIBUCION DE FRECUENCIAS ##
 hist(pois_vals,
@@ -41,25 +39,40 @@ hist(pois_vals,
     )
 
 ## EJERCICIO 3 - ESTIMACION DE PROBABILIDADES DE INTERVALOS ##
-error_sum <- 0
-for (i in min_val:max_val) {
-  prob_dist <- ppois(i, lambda)
-  prob_sample <- length(which(pois_vals < i)) / size
-
-  error <- abs(prob_dist - prob_sample) / prob_dist
-  error_sum <- error_sum + error
-  print(sprintf(interval_format,
-                prob_sample,
-                prob_dist,
-                error
-                )
-        )
+calc_ppois_interval <- function(inferior, superior, lambda) {
+  return(ppois(superior, lambda) - ppois(inferior, lambda))
 }
-sprintf("Mean error : %f", error_sum / size)
+calc_array_interval <- function(inferior, superior, array_vals, size) {
+  return((length(which(pois_vals < superior)) -
+          length(which(pois_vals < inferior))) / size)
+}
+calc_interval <- function(inferior, superior, lambda, array_vals, size) {
+  prob_dist <-  calc_ppois_interval(inferior, superior, lambda)
+  prob_sample <- calc_array_interval(inferior, superior, array_vals, size)
+  error <- abs(prob_dist - prob_sample)
+  message(sprintf("Interval: [%f, %f]", inferior, superior))
+  message(sprintf("\t- Ppois Function Values -> %f", prob_dist))
+  message(sprintf("\t- Generated Values -> %f", prob_sample))
+  message(sprintf("\t- Error -> %f", error))
+}
+
+## Necesitamos estos tres valores para calcular nuestros intervalos
+difference <- (max_val - min_val) / 3
+first_third <- min_val + difference
+second_third <- min_val + 2 * difference
+## Tomamos 3 intervalos:
+##  [min_val, first_third]
+calc_interval(min_val, first_third, lambda, pois_vals, size)
+## [first_third, second_third]
+calc_interval(first_third, second_third, lambda, pois_vals, size)
+## [second_third, max_val]
+calc_interval(second_third, max_val, lambda, pois_vals, size)
 
 ## EJERCICIO 4 - VALORES PUNTUALES DE LA MEDIA Y LA VARIANZA MUESTRAL ##
 pois_mean <- mean(pois_vals)
 pois_var <- var(pois_vals)
+pois_mean
+pois_var
 
 ## EJERICICIO 5 - APLICACION DEL TEOREMA CENTRAL DEL LIMITE ##
 clt_function <- function(x) {
@@ -70,10 +83,8 @@ clt_function <- function(x) {
 clt_values <- sapply(pois_vals, clt_function)
 clt_mean <- mean(clt_values)
 clt_sd <- sd(clt_values)
-
-# MEDIA Y VARIANZA DE LA DISTRIBUCION TRAS APLICAR CLT FUNCTION #
 clt_mean
-clt_var
+clt_sd
 
 ## OBTENEMOS LOS HISTOGRAMAS DE AMBAS DISTRIBUCIONES DE VALORES ##
 clt_hist <- hist(clt_values,
@@ -81,7 +92,7 @@ clt_hist <- hist(clt_values,
                   xlab = "Generated Values"
                 )
 
-sample_normal <- rnorm(100000)
+sample_normal <- rnorm(10000)
 norm <- hist(sample_normal,
               main = "Normal Distribution Values",
               xlab = "Generated Values",
