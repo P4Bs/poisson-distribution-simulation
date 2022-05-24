@@ -92,7 +92,7 @@ clt_hist <- hist(clt_values,
                   xlab = "Generated Values"
                 )
 
-sample_normal <- rnorm(10000)
+sample_normal <- rnorm(size)
 norm <- hist(sample_normal,
               main = "Normal Distribution Values",
               xlab = "Generated Values",
