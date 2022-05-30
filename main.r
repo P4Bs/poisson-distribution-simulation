@@ -3,8 +3,8 @@ set.seed(42069) ## jaja numero gracioso
 
 ## EJERCICIO 1 - GENERACION DE UNA MUESTRA DE TAMANYO N
 ### VARIABLES ###
-size <- 50000
-lambda <- 22
+size <- 100000
+lambda <- 32
 pois_vals <- integer()
 
 ## FUNCION PARA GENERAR NUESTROS VALORES DE LA DISTRIBUCION POISSON ##
