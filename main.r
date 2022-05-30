@@ -3,8 +3,8 @@ set.seed(42069) ## jaja numero gracioso
 
 ## EJERCICIO 1 - GENERACION DE UNA MUESTRA DE TAMANYO N
 ### VARIABLES ###
-size <- 100000
-lambda <- 32
+size <- 50000
+lambda <- 22
 pois_vals <- integer()
 
 ## FUNCION PARA GENERAR NUESTROS VALORES DE LA DISTRIBUCION POISSON ##
@@ -60,6 +60,9 @@ calc_interval <- function(inferior, superior, lambda, array_vals, size) {
 difference <- (max_val - min_val) / 3
 first_third <- min_val + difference
 second_third <- min_val + 2 * difference
+difference
+first_third
+second_third
 ## Tomamos 3 intervalos:
 ##  [min_val, first_third]
 calc_interval(min_val, first_third, lambda, pois_vals, size)
