@@ -1,8 +1,8 @@
 # poisson-distribution-simulation
 ## Members
-- F
-- J
-- P
+- Francisco J. Jiménez Montes
+- Juan Marques Garrido
+- Pablo J. Moreno Polo
 
 ## Purpose
 Store the R code of a poisson distribution simulation
